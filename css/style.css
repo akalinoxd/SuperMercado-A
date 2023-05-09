@@ -13,6 +13,10 @@
     padding: 0;
 }
 
+header nav{
+    display: none;
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -33,7 +37,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 40%;
+    opacity: 100%;
 }
 
 header{
@@ -101,9 +105,26 @@ figure{
     font-size: 13pt;
 }
 
+figure span{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+}
+
+#formulario span{
+    display: inline;
+}
+
 figure img{
     display: flex;
     height: 100px;
+}
+figure figcaption{
+    display: block;
+    width: 100%;
 }
 
 h2{
@@ -155,7 +176,7 @@ label input{
 }
 
 #name{
-    margin-left: 3%;
+    margin-left: 2.9%;
 }
 
 #email{
@@ -163,8 +184,8 @@ label input{
 }
 
 #assunto{
-    margin-left: 1.85%;
-    width: 239px;
+    margin-left: 1.8%;
+    width: 241px;
 }
 
 #formulario button{
@@ -181,20 +202,150 @@ label input{
     margin-left: 0.2%;
 }
 
+#abacaxiArrombado img{
+    width: 50px;
+}
+
+footer span{
+    display: block;
+    margin-top: 5px;
+}
+
+footer i{
+    font-size: 20pt;
+    padding-right: 30px;
+}
+
 @media (max-width:780px) {
+    @keyframes slide {
+        from {
+            opacity: 0%;
+        }
+
+        to {
+            opacity: 100%;
+        }
+    }
+
+    body, html {
+        overflow-x: hidden!important;
+    }
+
+    main{
+        width: 100vw;
+    }
+
+    figcaption{
+        font-size: 8pt;
+    }
+
     header{
         display: flex;
         flex-direction: row;
-        height: 100px;
-        line-height: 100px;
+        height: 70px;
+        line-height: 70px;
     }
-    .logo{
-        height: 90px;
+
+    .dp-menu{
+        width: 50%;
+        text-align: end;
+        opacity: 100%;
     }
+
+    .dp-menu i{
+        padding: 10px;
+    }
+
+    .dp-menu ul{
+        text-align: end;
+    }
+
+    .dp-menu ul li a{
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        padding-top: 5px;
+    }
+
     header h1{
-        font-size: 20pt;
+        font-size: 15pt;
     }
+
+    .parallax{
+        min-height: 250px;
+    }
+
+    figure{
+        margin: 0;
+    }
+
+    .produtos{
+        margin: 0;
+    }
+
+    figure > div{display: flex;}
+    
+    figure div input{
+        width: 25px;
+    }
+
+    #assunto, #email, #name, #mensagem{
+        margin: 0;
+    }
+
+    h2{
+        width: 100vw;
+        text-align: center;
+    }
+
+    section .produtos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     nav{
         display: none;
+    }
+
+    header nav{
+        display: inline;
+    }
+
+    header nav ul li{
+        box-sizing: border-box;
+    }
+
+    header nav ul{
+        background-color: #89aae6;
+    }
+
+    header nav ul li a{
+        width: 100px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 10pt;
+        background-color: #89aae6;
+        display: block;
+        border: none;
+        border-radius: 0;
+    }
+
+    .dp-menu ul{
+        display: none;
+        list-style-type: none;
+        position: absolute;
+        padding: 0;
+        right: 0;
+    }
+
+    .dp-menu #toggle:checked ~ ul{
+        display: block;
+        animation: slide 0.5s normal;
+    }
+
+    .hide{
+        position: absolute;
+        left: -100vw;
     }
 }
