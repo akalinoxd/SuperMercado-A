@@ -13,10 +13,6 @@
     padding: 0;
 }
 
-body, html{
-    overflow-x: hidden!important;
-} 
-
 header nav{
     display: none;
 }
